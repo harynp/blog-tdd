@@ -2,9 +2,9 @@
   <div id="app">
     <!-- <navbar></navbar> -->
     <sidebar v-bind:articles="articles"></sidebar>
-    <ArticleSummary v-bind:articles="articles"></ArticleSummary>
+    <!-- <ArticleSummary v-bind:articles="articles"></ArticleSummary> -->
     <!-- <Footer></Footer> -->
-    <router-view/>
+    <router-view v-bind:articles="articles"></router-view>
   </div>
 </template>
 

@@ -7,18 +7,26 @@
 </div>
 </div> -->
 <div class="col-md-3">
-<h2>Menu</h2>
-<div class="w3-sidebar w3-bar-block " style="width:100%" v-for="article in articles">
-  <a href="#" class="w3-bar-item w3-button"> {{ article.title }} </a>
-</div>
+  <h2>List Articles</h2>
+  <!-- <p>{{ articles }}</p> -->
+    <router-link
+    v-for="(article, index) in articles"
+        :to="'/blog/' + article._id"
+        class="list-group-item"
+        :key="index">
+        {{ article.title }}
+        {{ article._id}}
+    </router-link>
+  </ul>
 </div>
 </template>
 
 <script>
+import ArticleDetails from '@/components/ArticleDetails'
 export default {
   props: ['articles'],
   components: {
-
+    ArticleDetails
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
 <div class="col-md-9">
-  <div class="jumbotron" v-for= "article in articles">
+  <div class="jumbotron">
     <img :src= "article.imgUrl" class="img-responsive">
     <h1>{{ article.title }}</h1>
     <p> {{ article.content }} </p>
@@ -11,7 +11,29 @@
 
 <script>
 export default {
-  props: ['articles']
+  props: ['id'],
+  data: function () {
+    return {
+      article: {}
+    }
+  },
+  methods: {
+    getDetailArticle (id) {
+      this.$http.get('/api/blog/' + id)
+      .then(({data}) => {
+        this.article = data
+      })
+      .catch((err) => console.log(err))
+    }
+  },
+  mounted () {
+    this.getDetailArticle(this.id)
+  },
+  watch: {
+    id (newId) {
+      this.getDetailArticle(this.id)
+    }
+  }
 }
 </script>
 

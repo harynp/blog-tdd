@@ -2,8 +2,8 @@
 <div id="app">
   <!-- <navbar></navbar> -->
   <!-- <sidebar></sidebar> -->
-  <container></container>
-  <Footer></Footer>
+  <!-- <container></container> -->
+  <!-- <footer></footer> -->
   <router-view/>
 </div>
 </template>
@@ -12,36 +12,7 @@
 // import Navbar from '@/components/Navbar'
 // import Sidebar from '@/components/Sidebar'
 // import Container from '@/components/Container'
-import Footer from '@/components/Footer'
-export default {
-  name: 'app',
-  components: {
-    // Navbar
-    // Sidebar,
-    // Container,
-    Footer
-  },
-  data () {
-    return {
-      articles: []
-    }
-  },
-  methods: {
-    getArticles () {
-      this.$http.get('/api/blog')
-        .then(({data}) => {
-          console.log(data)
-          this.articles = data
-        })
-        .catch(err => {
-          console.log(err)
-        })
-    }
-  },
-  mounted () {
-    this.getArticles()
-  }
-}
+// import footer from '@/components/Footer'
 </script>
 
 <style>
@@ -52,5 +23,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 0px;
+  /*background-image: url("https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-475572.png");*/
 }
 </style>
