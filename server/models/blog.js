@@ -10,7 +10,8 @@ const Schema = mongoose.Schema;
 const blogSchema = new Schema({
     title: String,
     content: String,
-    author: String
+    author: String,
+    imgUrl: String
 })
 const Blogs = mongoose.model('Blogs', blogSchema)
 

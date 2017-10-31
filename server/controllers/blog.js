@@ -27,7 +27,8 @@ class BLOG {
             $set:{
                 title: req.body.title,
                 content: req.body.content,
-                author: req.body.author
+                author: req.body.author,
+                imgUrl: req.body.imgUrl
             }
         },{new: true})
         .then(updArticle=>{
